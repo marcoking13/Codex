@@ -10,3 +10,28 @@ $('.sidebar').on('click', function(event) {
 	event.preventDefault();
 	$(this).toggleClass("open");
 });
+
+var topic = [
+	"HTML",
+	"CSS",
+	"Javascript",
+	"Nodejs",
+	"Mongo",
+	"Java",
+	"Swift",
+	"React",
+	"Python"
+];
+function renderQuiz(topic){
+topic.map((subject)=>{
+
+	console.log(subject);
+		$("<a>").attr("href","#").addClass("quiz lefta").text(subject).appendTo(".sidebar-left")
+
+})
+}
+
+
+
+
+renderQuiz(topic);

@@ -138,22 +138,27 @@ let getMeetUp = function(){
 
 //initial API call
   $.getJSON(queryUrl, null, function(data) {
-    results = data.results;
-//if no meetup found based on user search, defaults to javascript meetups
-    if (data.code === 'badtopic' || results.length === 0 || results == undefined) {
-      defaultTopic = 'javascript'
-      queryUrl = 'https://api.meetup.com/2/open_events?key=' + meetUpKey + '&sign=true&photo-host=public&topic=' + defaultTopic + '&zip=' + zip + '&page=5&fields=next_event,time,group_photos&callback=?';
-        $.getJSON(queryUrl, null, function(data){
-          results = data.results;
-          displayMeetUp();
-        })
-    }
-    else {
-      $('#meetUpSidebar').html('');
-      displayMeetUp();
+    if(!data){
+      return   $('#meetUpSidebar').html('<button class="btn btn-danger">Login To Meetup</button>');
+    }else{
+        var results = data.results;
+
+      //if no meetup found based on user search, defaults to javascript meetups
+      if (data.code === 'badtopic' || results.length === 0 || results == undefined) {
+        defaultTopic = 'javascript'
+        queryUrl = 'https://api.meetup.com/2/open_events?key=' + meetUpKey + '&sign=true&photo-host=public&topic=' + defaultTopic + '&zip=' + zip + '&page=5&fields=next_event,time,group_photos&callback=?';
+          $.getJSON(queryUrl, null, function(data){
+            results = data.results;
+            displayMeetUp();
+          })
+        }
+        else {
+            $('#meetUpSidebar').html('');
+            displayMeetUp();
+          };
+        }
+      })
     };
-  });
-};
 //Dynamically displays meetup sidebar, reformats unix time for next event
 let displayMeetUp = function() {
   for (var i =0; i < 3; i ++){
