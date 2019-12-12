@@ -11,10 +11,9 @@ var topic = [
 	"CSS",
 	"Javascript",
 	"Nodejs",
-	"Mongo",
+	"mySQL",
 	"Java",
-	"Swift",
-	"React",
+	"Express",
 	"Python"
 ];
 

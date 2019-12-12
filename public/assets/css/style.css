@@ -255,14 +255,18 @@ iframe {
 }
 .selected {
 	background-color:#F5F5F5;
+	color:black !important;
+	border-radius:3px;
 }
 
 .correctStatus {
 	background-color:green;
+		border-radius:3px;
 }
 
 .incorrectStatus {
   background-color:red;
+		border-radius:3px;
 }
 
 .question {
@@ -275,11 +279,31 @@ iframe {
   margin: 0 auto;
   font-size:16px;
 }
-
+#Javasidebar{
+	opacity: 0 !important;
+	width:0;
+	height:0;
+}
+.nav {
+	width:70%;
+	margin-left:15%;
+}
+.ml10{
+	margin-left: 10%;
+}
 .quizSubmit, .resetButton {
   width:30%;
   margin-left: 300px;
   height:45px;
+	color:white;
+	border:red 5px solid;
+	background:transparent !important;
+	margin-bottom:2%;
+}
+.quizSubmit:hover, .resetButton:hover{
+	background:black !important;
+	border:green 5px solid !important;
+
 }
 
 #results {

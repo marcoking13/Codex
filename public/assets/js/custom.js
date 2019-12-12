@@ -348,7 +348,7 @@ var quizzes = {
       correctAnswer: "All of the above",
       }
     },
-    Node_Quiz: {
+    Nodejs_Quiz: {
     0: {
       question: "Which of following command starts a REPL session?",
       answer1: "$ node start",
@@ -767,221 +767,220 @@ var quizzes = {
     },
       Python_Quiz: {
     0: {
-      question: "What is the fastest fish in the ocean?",
-      answer1: "Marlin",
-      answer2: "Wahoo",
-      correctAnswer: "Sailfish",
-      answer3: "Tuna",
+      question: "What type of language is Python",
+      answer1: "compiled",
+      answer2: "interpreted",
+      correctAnswer: "interpreted",
+      answer3: "functional",
     },
     1:   {
-      question: "What is the world's largest ocean?",
-      answer1: "Atlantic",
-      answer2: "Indian",
-      correctAnswer: "Pacific",
-      answer3: "Arctic",
+      question: "What is a namespace in Python?",
+      answer1: "naming system",
+      answer2: "vairable",
+      correctAnswer: "naming system",
+      answer3: "Compiler",
     },
     2: {
-      question: "What percent of the oxygen we breathe is produced by the oceans?",
-      answer1: "30%",
-      answer2: "50%",
-      answer3: "90%",
-      correctAnswer: "70%",
+      question: "What is PYTHONPATH?",
+      answer1: "Library in Python",
+      answer2: "Module",
+      answer3: "Enviroment Variable",
+      correctAnswer: "Enviroment Variable",
     },
     3: {
-      question: "This is the largest animal on earth:",
-      answer1: "Humpback Whale",
-      correctAnswer: "Blue Whale",
-      answer2: "Whale Shark",
-      answer3: "Sperm Whale",
+      question: "Python is one of the easiet languages",
+      answer1: "True",
+      correctAnswer: "True",
+      answer2: "False",
+
     },
     4:  {
-      question: "What percent of the Earth's surface is covered by oceans?",
-      answer1: "82%",
-      answer2: "65%",
-      answer3: "87%",
-      correctAnswer: "71%",
+      question: "What is GIL",
+      answer1: "Allows only one thread to run at a time",
+      answer2: "Connects code to the Internet",
+      answer3: "Compiler for Python code",
+      correctAnswer: "Allows only one thread to run at a time",
     },
     5:  {
-      question: "What is the average depth of the Earth's oceans?",
-      correctAnswer: "12,200 ft",
-      answer1: "5,800 ft",
-      answer2: "2,400 ft",
-      answer3: "21,000 ft",
+      question: "Why was Python created?",
+      correctAnswer: "To express concepts with fewer lines",
+      answer1: "To express concepts with fewer lines",
+      answer2: "To make video games",
+      answer3: "To create IOS compatible apps",
     },
     6:  {
-      question: "What percent of humans live on the coast?",
-      answer1: "70%",
-      answer2: "50%",
-      answer3: "40%",
-      correctAnswer: "80%",
+      question: "How to console to terminal?",
+      answer1: "print()",
+      answer2: "console()",
+      answer3: "console.log()",
+      correctAnswer: "print()",
     },
     7:  {
-      question: "Green turtles can migrate more than _____ miles to lay their eggs.",
-      answer1: "100",
-      answer2: "400",
-      correctAnswer: "1400",
-      answer3: "1000",
+      question: "How to comment?",
+      answer1: "#",
+      answer2: "//",
+      correctAnswer: "#",
+      answer3: "/*",
 
     },
     8:  {
-      question: "Life began in the seas how long ago?",
-      answer1: "1 BYA",
-      correctAnswer: "3.2 BYA",
-      answer2: "750 MYA",
-      answer3: "5 BYA",
+      question: "How do you create a function?",
+      answer1: 'define myFunction():',
+      correctAnswer: 'def myFunction():',
+      answer2: "def myFunction():",
+      answer3: "function myFunction()",
     },
     9:  {
-      question: "How many hearts do octopus have?",
-      answer1: "1",
-      answer2: "2",
-      correctAnswer: "3",
-      answer3: "4",
+      question: "How do you create a variable?",
+      answer1: "x = 4",
+      answer2: "var x = 4",
+      correctAnswer: "x = 4",
+      answer3: "const x = 4",
       }
     },
       CSharp_Quiz: {
     0: {
-      question: "What is the fastest fish in the ocean?",
-      answer1: "Marlin",
-      answer2: "Wahoo",
-      correctAnswer: "Sailfish",
-      answer3: "Tuna",
+      question: "What type of language is C#",
+      answer1: "Scripted",
+      answer2: "Functional",
+      correctAnswer: "Scripted",
+      answer3: "Database",
     },
     1:   {
-      question: "What is the world's largest ocean?",
-      answer1: "Atlantic",
-      answer2: "Indian",
-      correctAnswer: "Pacific",
-      answer3: "Arctic",
+      question: "What is reflection?",
+      answer1: "Describes Metadata",
+      answer2: "Logs code to a browser",
+      correctAnswer: "Describe Metadata",
+      answer3: "Compiler",
     },
     2: {
-      question: "What percent of the oxygen we breathe is produced by the oceans?",
-      answer1: "30%",
-      answer2: "50%",
-      answer3: "90%",
-      correctAnswer: "70%",
+      question: "What are Delegates",
+      answer1: "Reference to a method",
+      answer2: "Variables",
+      answer3: "Libraries",
+      correctAnswer: "Reference to a method",
     },
     3: {
-      question: "This is the largest animal on earth:",
-      answer1: "Humpback Whale",
-      correctAnswer: "Blue Whale",
-      answer2: "Whale Shark",
-      answer3: "Sperm Whale",
+      question: "What is an I/O class",
+      answer1: "Manipulate a file",
+      correctAnswer: "All of Above",
+      answer2: "Reads from a stream",
+      answer3: "All of Above",
     },
     4:  {
-      question: "What percent of the Earth's surface is covered by oceans?",
-      answer1: "82%",
-      answer2: "65%",
-      answer3: "87%",
-      correctAnswer: "71%",
+      question: "Can you make games with C#?",
+      answer2: "False",
+      correctAnswer: "True",
     },
     5:  {
-      question: "What is the average depth of the Earth's oceans?",
-      correctAnswer: "12,200 ft",
-      answer1: "5,800 ft",
-      answer2: "2,400 ft",
-      answer3: "21,000 ft",
+      question: "Which of the following is a key word?",
+      correctAnswer: "using",
+      answer1: "using",
+      answer2: "required",
+      answer3: "namespace",
     },
     6:  {
-      question: "What percent of humans live on the coast?",
-      answer1: "70%",
-      answer2: "50%",
-      answer3: "40%",
-      correctAnswer: "80%",
+      question: "What always ends after each statement?",
+      answer1: ";",
+      answer2: ":",
+      answer3: ".",
+      correctAnswer: ";",
     },
     7:  {
-      question: "Green turtles can migrate more than _____ miles to lay their eggs.",
-      answer1: "100",
-      answer2: "400",
-      correctAnswer: "1400",
-      answer3: "1000",
+      question: "How do you output something?",
+      answer1: "WriteLine()",
+      answer2: "Stream()",
+      correctAnswer: "WriteLine()",
+      answer3: "Console()",
 
     },
     8:  {
-      question: "Life began in the seas how long ago?",
-      answer1: "1 BYA",
-      correctAnswer: "3.2 BYA",
-      answer2: "750 MYA",
-      answer3: "5 BYA",
+      question: "Who invented C#",
+      answer1: "Microsoft",
+      correctAnswer: "Microsoft",
+      answer2: "Apple",
+      answer3: "Sony",
     },
     9:  {
-      question: "How many hearts do octopus have?",
-      answer1: "1",
-      answer2: "2",
-      correctAnswer: "3",
-      answer3: "4",
+      question: "What is the most similar language to C#?",
+      answer1: "C++",
+      answer2: "Swift",
+      correctAnswer: "C++",
+      answer3: "SQL",
       }
     },
       Express_Quiz: {
     0: {
-      question: "What is the fastest fish in the ocean?",
-      answer1: "Marlin",
-      answer2: "Wahoo",
-      correctAnswer: "Sailfish",
-      answer3: "Tuna",
+      question: "What is a port",
+      answer1: "Number the server uses for URL",
+      answer2: "File Manager",
+      correctAnswer: "Number the server uses for URL",
+      answer3: "Accesses Database",
     },
     1:   {
-      question: "What is the world's largest ocean?",
-      answer1: "Atlantic",
-      answer2: "Indian",
-      correctAnswer: "Pacific",
-      answer3: "Arctic",
+      question: "How to install express?",
+      answer1: "npm install express",
+      answer2: "install express",
+      correctAnswer: "npm install express",
+      answer3: "node install express",
     },
     2: {
-      question: "What percent of the oxygen we breathe is produced by the oceans?",
-      answer1: "30%",
-      answer2: "50%",
-      answer3: "90%",
-      correctAnswer: "70%",
+      question: "What symbol for home URL?",
+      answer1: "/",
+      answer2: "dirname",
+      answer3: "/home",
+      correctAnswer: "/",
     },
     3: {
-      question: "This is the largest animal on earth:",
-      answer1: "Humpback Whale",
-      correctAnswer: "Blue Whale",
-      answer2: "Whale Shark",
-      answer3: "Sperm Whale",
+      question: "What language uses Express?",
+      answer1: "Java",
+      correctAnswer: "Javascript",
+      answer2: "Swift",
+      answer3: "C#",
     },
     4:  {
-      question: "What percent of the Earth's surface is covered by oceans?",
-      answer1: "82%",
-      answer2: "65%",
-      answer3: "87%",
-      correctAnswer: "71%",
+      question: "How to access Express npm?",
+      answer1: "require('express')",
+      answer2: "import express",
+      answer3: "module.import express",
+      correctAnswer: "require('express')",
     },
     5:  {
-      question: "What is the average depth of the Earth's oceans?",
-      correctAnswer: "12,200 ft",
-      answer1: "5,800 ft",
-      answer2: "2,400 ft",
-      answer3: "21,000 ft",
+      question: "What arugments to Express route-handler-function?",
+      correctAnswer: "request & response",
+      answer1: "POST & GET",
+      answer2: "var & const",
+      answer3: "request & response",
     },
     6:  {
-      question: "What percent of humans live on the coast?",
-      answer1: "70%",
-      answer2: "50%",
-      answer3: "40%",
-      correctAnswer: "80%",
+      question: "What does Express do?",
+      answer1: "HTTP Utility",
+      answer2: "Frontend Framework",
+      answer3: "Package Manager",
+      correctAnswer: "HTTP Utility",
     },
     7:  {
-      question: "Green turtles can migrate more than _____ miles to lay their eggs.",
-      answer1: "100",
-      answer2: "400",
-      correctAnswer: "1400",
-      answer3: "1000",
+      question: "What is CLI?",
+      answer1: "Command Line Interface",
+      answer2: "Computer Linux Interface",
+      correctAnswer: "Command Line Interface",
+      answer3: "npm package",
 
     },
     8:  {
-      question: "Life began in the seas how long ago?",
-      answer1: "1 BYA",
-      correctAnswer: "3.2 BYA",
-      answer2: "750 MYA",
-      answer3: "5 BYA",
+      question: "Is Express and Node.js single-threaded?",
+      answer1: "Single-Threaded",
+      correctAnswer: "Single-Threaded",
+      answer3:"Both",
+      answer2: "Multi-Threaded",
+
     },
     9:  {
-      question: "How many hearts do octopus have?",
-      answer1: "1",
-      answer2: "2",
-      correctAnswer: "3",
-      answer3: "4",
+      question: "What is NOT a feature of Express",
+      answer1: "Middleware",
+      answer2: "HTTP operations",
+      correctAnswer: "Database functionality",
+      answer3: "Rendering HTML",
     }
   },
 };
@@ -1119,44 +1118,44 @@ let checkZip = function() {
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //-----------------------------------------------------------MeetUp API Call-----------------------------------------------------------------------------//
-
-
-//Dynamically displays meetup sidebar, reformats unix time for next event
-let displayMeetUp = function() {
-  for (var i =0; i < 3; i ++){
-    var meetUpDiv=$('<div>');
-    var p =  $('<p>');
-    var link = $('<a>');
-    var img = $('<img>');
-    var time = results[i].time;
-    var timeMoment = moment(time, 'x');
-    var currentTime = timeMoment.format('LLL')
-    var sidebarId = $('#' + topic + 'sidebar');
-
-    img.attr('src', results[i].group.photos[0].highres_link);
-    img.css('width', '150px')
-    img.css('height', '100px')
-
-    link.attr('href', results[i].event_url)
-    link.attr('target', '_blank');
-    link.addClass('RSVP');
-    link.text('RSVP');
-
-
-//if no venue is listed, remove venue from display
-  if (results[i].venue === undefined) {
-    p.html("<br>" + results[i].name + '<br>' + "Next Event: " + currentTime);
-  }
-  else {
-    p.html("<br>" + results[i].name + '<br>' + results[i].venue.name + '<br>' + results[i].venue.city + ', ' + results[i].venue.state + '<br>' + "Next Event: " + currentTime);
-  }
-    meetUpDiv.addClass('meetUpDiv')
-    meetUpDiv.append(p);
-    meetUpDiv.append(img);
-    meetUpDiv.append(link);
-    $(meetUpDiv).appendTo(sidebarId);
-  }
-};
+//
+//
+// //Dynamically displays meetup sidebar, reformats unix time for next event
+// let displayMeetUp = function() {
+//   for (var i =0; i < 3; i ++){
+//     var meetUpDiv=$('<div>');
+//     var p =  $('<p>');
+//     var link = $('<a>');
+//     var img = $('<img>');
+//     var time = results[i].time;
+//     var timeMoment = moment(time, 'x');
+//     var currentTime = timeMoment.format('LLL')
+//     var sidebarId = $('#' + topic + 'sidebar');
+//
+//     img.attr('src', results[i].group.photos[0].highres_link);
+//     img.css('width', '150px')
+//     img.css('height', '100px')
+//
+//     link.attr('href', results[i].event_url)
+//     link.attr('target', '_blank');
+//     link.addClass('RSVP');
+//     link.text('RSVP');
+//
+//
+// //if no venue is listed, remove venue from display
+//   if (results[i].venue === undefined) {
+//     p.html("<br>" + results[i].name + '<br>' + "Next Event: " + currentTime);
+//   }
+//   else {
+//     p.html("<br>" + results[i].name + '<br>' + results[i].venue.name + '<br>' + results[i].venue.city + ', ' + results[i].venue.state + '<br>' + "Next Event: " + currentTime);
+//   }
+//     meetUpDiv.addClass('meetUpDiv')
+//     meetUpDiv.append(p);
+//     meetUpDiv.append(img);
+//     meetUpDiv.append(link);
+//     $(meetUpDiv).appendTo(sidebarId);
+//   }
+// };
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------Modal Generation for search-------------------------------------------------------------------------------//
 var topics = [];
@@ -1250,7 +1249,7 @@ var tabOpen = false;
       $(this).find('a').attr('aria-expanded', 'false');
       if ($(this).attr('data-search') == topic) {
         $("#myTabContent").find("div").removeClass('active in');
-        $('#' + topic).addClass('tab-pane active in')
+        $('#' + topic).addClass('tab-pane active in ml10')
         $(this).addClass('active');
         $(this).find('a').attr('aria-expanded') === true;
         tabOpen = true;
@@ -1296,14 +1295,13 @@ function quizTab() {
     contentDiv.attr("class", "tab-pane fade active in");
     // Variable - Define .content to place class="" in
     contentDiv.attr("id", topics[k]);
-    contentDiv.css({'height': '350px', 'width': '80%'});
+    contentDiv.css({'height': '350px', 'width': '80%',color:"white"});
     // Variable - Define <li> to generate search tab
     var searchTab = $('<li>');
     // Attribute to searchTab - class="active"
     searchTab.attr("class", "active");
     // Attribute to showTab - data-search="topics[i]"
     searchTab.attr("data-search", topics[k]);
-
     // Variable - Define <a> to generate input result
     var tabAncr = $("<a data-toggle='tab'>");
     // Attribute to showTab - href="#topics[i]"
@@ -1342,15 +1340,19 @@ function insertQuestion (question){
     console.log(question);
     nextQuestion = question[j];
     var questionDiv = $('<div>');
-    questionDiv.text('Question ' + (j + 1))
+    questionDiv.text('Question ' + (j + 1));
     questionDiv.attr('id', 'Question' + j);
-    questionDiv.css({'text-align': 'center', 'font-size': '18px'});
+    questionDiv.css({"text-align": "center", "font-weight":"bold","font-size": "17px",color:"white"});
       for(var k in nextQuestion) {
-        answer = $("<div>");
-        answer.addClass(k);
-        answer.html(nextQuestion[k]);
-        questionDiv.append(answer);
-        $('#' + topic).append(questionDiv);
+        if(k !== "correctAnswer"){
+          console.log(k);
+          answer = $("<div>");
+          answer.addClass(k);
+          answer.css({"font-size":"14px","font-weight":"normal"});
+          answer.html(nextQuestion[k]);
+          questionDiv.append(answer);
+          $('#' + topic).append(questionDiv);
+        }
       }
     var br = $('<br>')
     questionDiv.append(br);
