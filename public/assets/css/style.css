@@ -335,6 +335,20 @@ iframe {
 		top:10% !important;
 		right:5.5% !important;
 	}
+	.errImg{
+		width:50%;
+		margin-top: 10%;
+		margin-left: 25%;}
+		.errText{
+			text-align: center;
+			color:white;
+			font-weight: 100 !important;
+			margin-top: 20%;
+			padding-left:5%;
+			padding-right:5%;
+			line-height: 2;
+			font-family: monospace;
+		}
 	.site-nav.active{
 		top:30% !important;
 		left:1%;

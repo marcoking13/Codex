@@ -11,6 +11,8 @@ $( window ).on( "load", function() {
   console.log(window.innerWidth);
   if(window.innerWidth <= 490){
       $("body").empty();
+      $("<img>").addClass("errImg").attr("src","assets/img/err.png").appendTo("body");
+      $("<h4>").addClass("errText").text("Due to some of its features, Codex cannot run mobile, we apologize").appendTo("body");
     }
   });
 $(".left").on("click",function(){
