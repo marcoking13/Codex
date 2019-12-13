@@ -17,16 +17,14 @@ var topic = [
 	"React",
 	"Python"
 ];
-function renderQuiz(topic){
-topic.map((subject)=>{
 
-	console.log(subject);
+function renderQuiz(topic){
+	topic.map((subject)=>{
+
+		console.log(subject);
 		$("<a>").attr("href","#").addClass("quiz lefta").text(subject).appendTo(".sidebar-left")
 
-})
+	});
 }
-
-
-
 
 renderQuiz(topic);

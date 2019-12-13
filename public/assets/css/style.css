@@ -14,6 +14,7 @@ html,
 body {
 	height: 100%;
 	width: 100%;
+	background-size: tile;
 	background-image: url('../img/dark_geometric.png')
 }
 
@@ -51,7 +52,7 @@ Sitenav
 =============================================*/
 
 .site-nav {
-	position: fixed;
+	position: absolute;
 	top: 0%;
 	width: 100%;
 	height: 60px;
@@ -288,6 +289,7 @@ iframe {
 	width:70%;
 	margin-left:15%;
 }
+
 .ml10{
 	margin-left: 10%;
 }
@@ -324,4 +326,59 @@ iframe {
 
 #userZip {
   background-color: #353839;
+}
+
+
+@media screen and (max-width:480px){
+	.searcher{
+		position: absolute !important;
+		top:10% !important;
+		right:5.5% !important;
+	}
+	.site-nav.active{
+		top:30% !important;
+		left:1%;
+	}
+	.navbar-form, .navbar-center{
+
+		border: !important;
+	}
+	.site-nav{
+			left:1%;
+			width:105%;
+	}
+	.name-logo{
+		position: relative !important;
+		bottom:100px !important;
+		left:120px !important;
+	}
+
+	#searchInput{
+		position: relative;
+		left:20px;
+	}
+	#zipHolder{
+		position: relative;
+		background:transparent;
+
+		border:5px solid black;
+		color:white;
+
+		right:10px !important;
+	}
+	.open{
+		width:140px;
+	}
+	.name-logo {
+		top: 0%;
+		text-align: center;
+		position: fixed;
+		width: 30%;
+	}
+	.searcher2{
+		position: absolute !important;s
+		top:10% !important;
+		right:15.5% !important;
+	}
+	.
 }
