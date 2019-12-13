@@ -6,6 +6,13 @@
  * URL: github.com/itsokayitsofficial/project1/
  */
 
+
+$( window ).on( "load", function() {
+  console.log(window.innerWidth);
+  if(window.innerWidth <= 490){
+      $("body").empty();
+    }
+  });
 $(".left").on("click",function(){
   $(".lefta").toggleClass("ghost");
   $(".left3").toggleClass("ghost");
