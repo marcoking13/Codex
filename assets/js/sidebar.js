@@ -6,11 +6,6 @@
  * URL: github.com/itsokayitsofficial/project1/
  */
 
-$('.sidebar').on('click', function(event) {
-	event.preventDefault();
-	$(this).toggleClass("open");
-});
-
 var topic = [
 	"HTML",
 	"CSS",
