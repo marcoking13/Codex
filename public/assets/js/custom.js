@@ -123,7 +123,7 @@ $('#zipSearch').on('click', function(event) {
     $('#searchError').html('');
     $('#zipHolder, #zipSearch, #zipForm').toggle();
     // window.location.assign("https://www.eventbrite.com/oauth/authorize?response_type=token&client_id=YSYZ4UG4LKSBGGBYBOFB&redirect_uri=https://marcoking13.github.io/Codex/");
-    $.ajax("https://www.eventbriteapi.com/v3/users/me/?token=YSYZ4UG4LKSBGGBYBOFB").done((function(response){  console.log(response);})
+    // $.ajax("https://www.eventbriteapi.com/v3/users/me/?token=YSYZ4UG4LKSBGGBYBOFB").done((function(response){  console.log(response);})
   }
 //if invalid zip, turns the search box red
   else {
