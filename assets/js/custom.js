@@ -18,6 +18,7 @@
 $(".left").on("click",function(){
   $(".lefta").toggleClass("ghost");
   $(".left3").toggleClass("ghost");
+
 });
 // Nav Transition
 $('body').on('click', function () {
@@ -69,7 +70,10 @@ window.onload = function() {
 //Hides on window.load
 $('#zipHolder').hide();
 $('.sidebar-left').hide();
-    $.ajax("https://www.eventbriteapi.com/v3/users/me/?token=YSYZ4UG4LKSBGGBYBOFB").done(function(response){  console.log(response)});
+$.ajax({
+  url:"https://api.eventful.com/docs/events/search/?q=java&l=phoenix",
+  key:"nwbbWwZfkCLMk4Tv"
+}).done(function(res){console.log(res)});
 //-----------------------------------------------------MeetUp Variables-------------------------------------------------------------------//
 var topic = '';
 var zip = '';
