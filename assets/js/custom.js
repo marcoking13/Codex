@@ -70,10 +70,7 @@ window.onload = function() {
 //Hides on window.load
 $('#zipHolder').hide();
 $('.sidebar-left').hide();
-$.ajax({
-  url:"https://api.eventful.com/docs/events/search/?q=java&l=phoenix",
-  key:"nwbbWwZfkCLMk4Tv"
-}).done(function(res){console.log(res)});
+
 //-----------------------------------------------------MeetUp Variables-------------------------------------------------------------------//
 var topic = '';
 var zip = '';
