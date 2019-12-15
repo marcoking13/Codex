@@ -7,14 +7,14 @@
  */
 
 
-$( window ).on( "load", function() {
-  console.log(window.innerWidth);
-  if(window.innerWidth <= 490){
-      $("body").empty();
-      $("<img>").addClass("errImg").attr("src","assets/img/err.png").appendTo("body");
-      $("<h4>").addClass("errText").text("Due to some of its features, Codex cannot run mobile, we apologize").appendTo("body");
-    }
-  });
+// $( window ).on( "load", function() {
+//   console.log(window.innerWidth);
+//   if(window.innerWidth <= 490){
+//       $("body").empty();
+//       $("<img>").addClass("errImg").attr("src","assets/img/err.png").appendTo("body");
+//       $("<h4>").addClass("errText").text("Due to some of its features, Codex cannot run mobile, we apologize").appendTo("body");
+//     }
+//   });
 $(".left").on("click",function(){
   $(".lefta").toggleClass("ghost");
   $(".left3").toggleClass("ghost");
@@ -69,6 +69,7 @@ window.onload = function() {
 //Hides on window.load
 $('#zipHolder').hide();
 $('.sidebar-left').hide();
+    $.ajax("https://www.eventbriteapi.com/v3/users/me/?token=YSYZ4UG4LKSBGGBYBOFB").done(function(response){  console.log(response)});
 //-----------------------------------------------------MeetUp Variables-------------------------------------------------------------------//
 var topic = '';
 var zip = '';
