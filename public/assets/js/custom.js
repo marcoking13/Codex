@@ -9,6 +9,7 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //-------------------------------------------------------------------Quiz objects-------------------------------------------------------------------------------------//
 
+
 console.log(quizzes);
 $(".left").on("click",function(){
   $(".lefta").toggleClass("ghost");
@@ -77,8 +78,8 @@ $('.sidebar-left').hide();
 var topic = '';
 var zip = '';
 var results;
-var meetUpKey = '1a143e3f55f5e4a64664065683536';
-var queryUrl = 'https://api.meetup.com/2/open_events?key=' + meetUpKey + '&sign=true&photo-host=public&topic=' + topic + '&zip=' + zip + '&page=5&fields=next_event,time,group_photos&callback=?';
+var eventKey = '1zFnlKT0bIUMkEAQalgnLZHvP4JnV5KpvpV0X02M';
+var queryUrl = 'https://api.predicthq.com?key=' + eventKey + '&sign=true&photo-host=public&topic=' + topic + '&zip=' + zip + '&page=5&fields=next_event,time,group_photos&callback=?';
 var tryZip = '';
 var sidebarId = '';
 
@@ -102,6 +103,12 @@ let getYouTube = function(){
     var videoId = response.items[0].id.videoId;
     youtubeId.append("<iframe width='100%' height='100%' src='https://www.youtube.com/embed/" + videoId + "' frameborder='0'id='hi'></iframe>")
     });
+
+    $.ajax({
+      url:"https://api.predicthq.com/?q=java",
+      method:"GET",
+      Authorization:"Bearer "+eventKey
+    }).done((res)=>{console.log(res)})
 };
 //---------------------------------------------------------------------------------------------------------------------------------------------------//
 //-----------------------------------------------------Zip Code/Search logic-----------------------------------------------------------------------//
