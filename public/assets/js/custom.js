@@ -79,6 +79,7 @@ var topic = '';
 var zip = '';
 var results;
 var eventKey = '1zFnlKT0bIUMkEAQalgnLZHvP4JnV5KpvpV0X02M';
+var backUpKey = "n3TrufCMPW589XTFhAN_rkiJZll8PHb-McY4NiW6";
 var queryUrl = 'https://api.predicthq.com?key=' + eventKey + '&sign=true&photo-host=public&topic=' + topic + '&zip=' + zip + '&page=5&fields=next_event,time,group_photos&callback=?';
 var tryZip = '';
 var sidebarId = '';
@@ -88,6 +89,7 @@ var defaultTopic = '';
 //------------------------------------------------------YouTube variables--------------------------------------------------------------------------//
 var tubeURL = "https://www.googleapis.com/youtube/v3/";
 var youTubeKey = "AIzaSyC4tz1TDHpgGTkAyNR9ycjU0cixA6bDNnk";
+
 var videoSearch = '';
 //----------------------------------------------------------YouTube API-------------------------------------------------------------------------------------//
 let getYouTube = function(){
@@ -108,7 +110,7 @@ let getYouTube = function(){
       url:"https://api.predicthq.com/v1/events/?&q=java",
       headers: {
          'Authorization':'Bearer '+eventKey,
-      
+
          'Accept':'application/json'
      },
       method:"GET",
