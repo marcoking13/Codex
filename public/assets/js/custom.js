@@ -165,37 +165,39 @@ window.onload = function() {
 
 //Dynamically displays meetup sidebar, reformats unix time for next event
 let displayMeetUp = function() {
-  for (var i =0; i < 3; i ++){
-    $.ajax({
-      url:"https://api.predicthq.com/v1/events/?q="+topic,
-      headers: {
-         'Authorization':'Bearer '+eventKey,
+  $.ajax({
+    url:"https://api.predicthq.com/v1/events/?q="+topic,
+    headers: {
+       'Authorization':'Bearer '+eventKey,
 
-         'Accept':'application/json'
-     },
-      method:"GET",
+       'Accept':'application/json'
+   },
+    method:"GET",
 
-    }).done((res)=>{
+  }).done((res)=>{
+
       console.log(res);
       var eventURL = "https://control.predicthq.com/search/events/";
       console.log(eventURL,res);
-      var meetUpDiv=$('<div>');
-      var p =  $('<p>');
-      var link = $('<a>');
-      var img = $('<img>');
-      var time = results[i].start;
-      var timeMoment = moment(time, 'x');
-      var currentTime = timeMoment.format('LLL')
-      var sidebarId = $('#' + topic + 'sidebar');
+      for (var i =0; i < 3; i ++){
 
-      img.attr('src', "./public/assets/img/err.png");
-      img.css('width', '150px');
-      img.css('height', '100px')
+        var meetUpDiv=$('<div>');
+        var p =  $('<p>');
+        var link = $('<a>');
+        var img = $('<img>');
+        var time = results[i].start;
+        var timeMoment = moment(time, 'x');
+        var currentTime = timeMoment.format('LLL')
+        var sidebarId = $('#' + topic + 'sidebar');
 
-      link.attr('href', results[i].event_url)
-      link.attr('target', '_blank');
-      link.addClass('RSVP');
-      link.text('RSVP');
+        img.attr('src', "./public/assets/img/err.png");
+        img.css('width', '150px');
+        img.css('height', '100px')
+
+        link.attr('href', results[i].event_url)
+        link.attr('target', '_blank');
+        link.addClass('RSVP');
+        link.text('RSVP');
 
 
       //if no venue is listed, remove venue from display
@@ -210,6 +212,7 @@ let displayMeetUp = function() {
       meetUpDiv.append(img);
       meetUpDiv.append(link);
       $(meetUpDiv).appendTo(sidebarId);
+      }
     });
   };
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
