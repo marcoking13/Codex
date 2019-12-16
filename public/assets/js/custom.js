@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------Quiz objects-------------------------------------------------------------------------------------//
 
 
-console.log(quizzes);
+
 $(".left").on("click",function(){
   $(".lefta").toggleClass("ghost");
   $(".left3").toggleClass("ghost");
@@ -68,7 +68,7 @@ $(document).on('click', '.sidebar-left', function(event) {
 
 
 window.onload = function() {
-
+console.log("LSLLSL");
 //Hides on window.load
 $('#zipHolder').hide();
 $('.sidebar-left').hide();
@@ -93,7 +93,7 @@ var videoSearch = '';
 let getYouTube = function(){
   videoSearch = tubeURL + "search?&q=" + topic + '%20tutorial' + "&part=snippet&chart=mostPopular&videoCategoryId=27&type=video&relevanceLanguage=en&maxResults=1&key=" + youTubeKey;
   var youtubeId = $('#' + topic + 'video');
-console.log("l");
+
   $.ajax({
     url: videoSearch,
     method: "GET",
@@ -105,7 +105,7 @@ console.log("l");
     });
 
     $.ajax({
-      url:"https://api.predicthq.com/?q=java",
+      url:"https://api.predicthq.com/v1/events/?q=java",
       method:"GET",
       Authorization:"Bearer "+eventKey
     }).done((res)=>{console.log(res)})
