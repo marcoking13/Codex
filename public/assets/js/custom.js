@@ -107,7 +107,7 @@ let getYouTube = function(){
     });
 
     $.ajax({
-      url:"https://api.predicthq.com/v1/events/?q=java",
+      url:"https://api.predicthq.com/v1/events/?q="+topic,
       headers: {
          'Authorization':'Bearer '+eventKey,
 
