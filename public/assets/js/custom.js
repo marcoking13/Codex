@@ -177,6 +177,8 @@ let displayMeetUp = function() {
 
     }).done((res)=>{
       console.log(res);
+      var eventURL = "https://control.predicthq.com/search/events/";
+      console.log(eventURL,res);
       var meetUpDiv=$('<div>');
       var p =  $('<p>');
       var link = $('<a>');
