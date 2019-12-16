@@ -106,8 +106,11 @@ let getYouTube = function(){
 
     $.ajax({
       url:"https://api.predicthq.com/v1/events/?&q=java",
-      Accept: a"pplication/json",
-      Authorization: "Bearer "+eventKey,
+      headers: {
+         'Authorization':'Bearer '+eventKey,
+      
+         'Accept':'application/json'
+     },
       method:"GET",
 
     }).done((res)=>{console.log(res)})
