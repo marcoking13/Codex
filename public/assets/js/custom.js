@@ -93,7 +93,7 @@ var videoSearch = '';
 let getYouTube = function(){
   videoSearch = tubeURL + "search?&q=" + topic + '%20tutorial' + "&part=snippet&chart=mostPopular&videoCategoryId=27&type=video&relevanceLanguage=en&maxResults=1&key=" + youTubeKey;
   var youtubeId = $('#' + topic + 'video');
-
+console.log("l");
   $.ajax({
     url: videoSearch,
     method: "GET",
