@@ -179,36 +179,51 @@ let displayMeetUp = function() {
       console.log(res);
       var eventURL = "https://control.predicthq.com/search/events/";
       console.log(eventURL,res);
-      for (var i =0; i < 3; i ++){
+      var results = res.results;
+      for (var i =0; i <2; i ++){
 
         var meetUpDiv=$('<div>');
-        var p =  $('<p>');
+        var title =  $('<h5>');
+        title.addClass("bold");
+        var descr =  $('<p>');
+        descr.addClass("f13 p5");
+        var timeText =  $('<p>');
+        var locationText =  $('<p>');
+
         var link = $('<a>');
         var img = $('<img>');
         var time = results[i].start;
-        var timeMoment = moment(time, 'x');
-        var currentTime = timeMoment.format('LLL')
+        var timeMoment = moment(time);
+        var currentTime = timeMoment.format('LLL');
         var sidebarId = $('#' + topic + 'sidebar');
 
-        img.attr('src', "./public/assets/img/err.png");
-        img.css('width', '150px');
-        img.css('height', '100px')
+        img.attr('src', "./public/assets/img/code"+Math.floor(Math.random() * 7 + 1)+".png");
+        img.css('width', '50px');
+        img.css('height', '50px');
 
-        link.attr('href', results[i].event_url)
+        link.attr('href', eventURL+results[i].id)
         link.attr('target', '_blank');
         link.addClass('RSVP');
         link.text('RSVP');
 
 
+
+        console.log(results[i].title);
       //if no venue is listed, remove venue from display
-      if (results[i].venue === undefined) {
-        p.html("<br>" + results[i].name + '<br>' + "Next Event: " + currentTime);
-      }
-      else {
-        p.html("<br>" + results[i].name + '<br>' + results[i].venue.name + '<br>' + results[i].venue.city + ', ' + results[i].venue.state + '<br>' + "Next Event: " + currentTime);
-      }
+
+
+
+      descr.text(results[i].description);
+      title.text(results[i].title);
+      timeText.text("Start Time "+currentTime);
+      locationText.text(results[i].timezone);
+
       meetUpDiv.addClass('meetUpDiv')
-      meetUpDiv.append(p);
+      meetUpDiv.append(title);
+      meetUpDiv.append(descr);
+      meetUpDiv.append(locationText);
+
+      meetUpDiv.append(timeText);
       meetUpDiv.append(img);
       meetUpDiv.append(link);
       $(meetUpDiv).appendTo(sidebarId);
@@ -323,6 +338,7 @@ var tabOpen = false;
       topics.push(topic);
       searchTab();
       sidebarStatus();
+      displayMeetUp();
       $('.sidebar-left').show();
       $('#searchInput:text').val('');
       getYouTube();
