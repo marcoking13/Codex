@@ -68,42 +68,48 @@ $(document).on('click', '.sidebar-left', function(event) {
 
 
 window.onload = function() {
-console.log("LSLLSL");
+  console.log("LSLLSL");
 //Hides on window.load
-$('#zipHolder').hide();
-$('.sidebar-left').hide();
+  if(window.innerWidth <= 480){
+    $("body").empty();
+    $("<img>").attr("src","./public/assets/img/err.png").addClass("errImg").appendTo("body");
+    $("<h3>").text("Due to some of Codex's features, it cannot run mobile, we apologize").addClass("errText").appendTo("body");
+
+  }
+  $('#zipHolder').hide();
+  $('.sidebar-left').hide();
 
 
 //-----------------------------------------------------MeetUp Variables-------------------------------------------------------------------//
-var topic = '';
-var zip = '';
-var results;
-var eventKey = '1zFnlKT0bIUMkEAQalgnLZHvP4JnV5KpvpV0X02M';
-var backUpKey = "n3TrufCMPW589XTFhAN_rkiJZll8PHb-McY4NiW6";
-var queryUrl = 'https://api.predicthq.com?key=' + eventKey + '&sign=true&photo-host=public&topic=' + topic + '&zip=' + zip + '&page=5&fields=next_event,time,group_photos&callback=?';
-var tryZip = '';
-var sidebarId = '';
+  var topic = '';
+  var zip = '';
+  var results;
+  var eventKey = '1zFnlKT0bIUMkEAQalgnLZHvP4JnV5KpvpV0X02M';
+  var backUpKey = "n3TrufCMPW589XTFhAN_rkiJZll8PHb-McY4NiW6";
+  var queryUrl = 'https://api.predicthq.com?key=' + eventKey + '&sign=true&photo-host=public&topic=' + topic + '&zip=' + zip + '&page=5&fields=next_event,time,group_photos&callback=?';
+  var tryZip = '';
+  var sidebarId = '';
 
-var defaultTopic = '';
+  var defaultTopic = '';
 //---------------------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------YouTube variables--------------------------------------------------------------------------//
-var tubeURL = "https://www.googleapis.com/youtube/v3/";
-var youTubeKey = "AIzaSyC4tz1TDHpgGTkAyNR9ycjU0cixA6bDNnk";
+  var tubeURL = "https://www.googleapis.com/youtube/v3/";
+  var youTubeKey = "AIzaSyC4tz1TDHpgGTkAyNR9ycjU0cixA6bDNnk";
 
-var videoSearch = '';
+  var videoSearch = '';
 //----------------------------------------------------------YouTube API-------------------------------------------------------------------------------------//
-let getYouTube = function(){
-  videoSearch = tubeURL + "search?&q=" + topic + '%20tutorial' + "&part=snippet&chart=mostPopular&videoCategoryId=27&type=video&relevanceLanguage=en&maxResults=1&key=" + youTubeKey;
-  var youtubeId = $('#' + topic + 'video');
+  let getYouTube = function(){
+    videoSearch = tubeURL + "search?&q=" + topic + '%20tutorial' + "&part=snippet&chart=mostPopular&videoCategoryId=27&type=video&relevanceLanguage=en&maxResults=1&key=" + youTubeKey;
+    var youtubeId = $('#' + topic + 'video');
 
   $.ajax({
-    url: videoSearch,
-    method: "GET",
-    dataType: 'jsonp'
-  })
-  .done(function(response) {
-    var videoId = response.items[0].id.videoId;
-    youtubeId.append("<iframe width='100%' height='100%' src='https://www.youtube.com/embed/" + videoId + "' frameborder='0'id='hi'></iframe>")
+      url: videoSearch,
+      method: "GET",
+      dataType: 'jsonp'
+    })
+    .done(function(response) {
+      var videoId = response.items[0].id.videoId;
+      youtubeId.append("<iframe width='100%' height='100%' src='https://www.youtube.com/embed/" + videoId + "' frameborder='0'id='hi'></iframe>")
     });
 
     $.ajax({
@@ -119,47 +125,47 @@ let getYouTube = function(){
 };
 //---------------------------------------------------------------------------------------------------------------------------------------------------//
 //-----------------------------------------------------Zip Code/Search logic-----------------------------------------------------------------------//
-//returns boolean; checks if user input is valid US zip code
-function isValidUSZip(isZip) {
-  return /^\d{5}(-\d{4})?$/.test(isZip);
-}
-//on click of the zip code 'Go!' button.
-$('#zipSearch').on('click', function(event) {
-  event.preventDefault(event);
-  tryZip = $('#userZip:text').val();
-  $('#noZip').html('')
-//if Valid zip code set as user zip code and stores zip code locally.
-  if (isValidUSZip(tryZip) === true) {
-    zip = tryZip;
-    localStorage.clear();
-    localStorage.setItem('zip', zip);
-    $('#zipHolder').html('Current Zip Code: ' + zip + ' <span class="caret"></span>');
-    $('#searchError').html('');
+  //returns boolean; checks if user input is valid US zip code
+  function isValidUSZip(isZip) {
+    return /^\d{5}(-\d{4})?$/.test(isZip);
+  }
+  //on click of the zip code 'Go!' button.
+  $('#zipSearch').on('click', function(event) {
+    event.preventDefault(event);
+    tryZip = $('#userZip:text').val();
+    $('#noZip').html('')
+    //if Valid zip code set as user zip code and stores zip code locally.
+    if (isValidUSZip(tryZip) === true) {
+      zip = tryZip;
+      localStorage.clear();
+      localStorage.setItem('zip', zip);
+      $('#zipHolder').html('Current Zip Code: ' + zip + ' <span class="caret"></span>');
+      $('#searchError').html('');
+      $('#zipHolder, #zipSearch, #zipForm').toggle();
+      // window.location.assign("https://www.eventbrite.com/oauth/authorize?response_type=token&client_id=YSYZ4UG4LKSBGGBYBOFB&redirect_uri=https://marcoking13.github.io/Codex/");
+      // $.ajax("https://www.eventbriteapi.com/v3/users/me/?token=YSYZ4UG4LKSBGGBYBOFB").done((function(response){  console.log(response);})
+  }
+  //if invalid zip, turns the search box red
+    else {
+      $('#zipForm').addClass('has-error');
+    }
+  });
+  //Function to change zip code
+  $('#changeZip').on('click', function(event) {
+    window.location.assign("https://secure.meetup.com/oauth2/authorize?client_id=YOUR_CONSUMER_KEY&response_type=token&redirect_uri=https://marcoking13.github.io/Codex/redirect");
     $('#zipHolder, #zipSearch, #zipForm').toggle();
-    // window.location.assign("https://www.eventbrite.com/oauth/authorize?response_type=token&client_id=YSYZ4UG4LKSBGGBYBOFB&redirect_uri=https://marcoking13.github.io/Codex/");
-    // $.ajax("https://www.eventbriteapi.com/v3/users/me/?token=YSYZ4UG4LKSBGGBYBOFB").done((function(response){  console.log(response);})
-  }
-//if invalid zip, turns the search box red
-  else {
-    $('#zipForm').addClass('has-error');
-  }
-});
-//Function to change zip code
-$('#changeZip').on('click', function(event) {
-  window.location.assign("https://secure.meetup.com/oauth2/authorize?client_id=YOUR_CONSUMER_KEY&response_type=token&redirect_uri=https://marcoking13.github.io/Codex/redirect");
-  $('#zipHolder, #zipSearch, #zipForm').toggle();
-  $('#userZip:text').val('');
-  $('#zipForm').removeClass('has-error');
-});
+    $('#userZip:text').val('');
+    $('#zipForm').removeClass('has-error');
+  });
 //checks if there is a zip in local storage, if there is, sets that as current zip
-let checkZip = function() {
-  if (localStorage.getItem("zip") !== null) {
-    zip = localStorage.getItem('zip');
-    $('#zipHolder').html('Current Zip Code: ' + zip + ' <span class="caret"></span>');
-    $('#searchError').html('');
-    $('#zipHolder, #zipSearch, #zipForm').toggle();
+  let checkZip = function() {
+    if (localStorage.getItem("zip") !== null) {
+      zip = localStorage.getItem('zip');
+      $('#zipHolder').html('Current Zip Code: ' + zip + ' <span class="caret"></span>');
+      $('#searchError').html('');
+      $('#zipHolder, #zipSearch, #zipForm').toggle();
+    };
   };
-};
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //-----------------------------------------------------------MeetUp API Call-----------------------------------------------------------------------------//
@@ -203,68 +209,68 @@ let checkZip = function() {
 // };
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------Modal Generation for search-------------------------------------------------------------------------------//
-var topics = [];
+  var topics = [];
     // Function - Generates tabs of search input submitted
-function searchTab() {
-  var codepen = $("<iframe height='300' scrolling='no' title='RZvYVZ' src='//codepen.io/marcorulesk345/embed/RZvYVZ/?height=300&theme-id=31149&default-tab=html,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/marcorulesk345/pen/RZvYVZ/'>RZvYVZ</a> by marco (<a href='https://codepen.io/marcorulesk345'>@marcorulesk345</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>");
-  // For Loop - To cull search results
-  for (var i = 0; i < topics.length; i++) {
-    // Remove current tab class="active"
-    $("#myTab").find("li").removeClass('active');
-    // Remove current content class="active in"
-    $("#myTabContent").find("div").removeClass('active in');
-    // Variable - Define <div> to place search results in
-    var contentDiv = $("<div>");
-    // Variable - Define .content to place class="" in
-    contentDiv.attr("class", "tab-pane fade active in");
-    // Variable - Define .content to place class="" in
-    contentDiv.attr("id", topics[i]);
-    contentDiv.css({'height': '350px', 'width': '100%', 'text-align': 'center'});
-    // Variable - Define <li> to generate search tab
-    var searchTab = $('<li>');
-    // Attribute to searchTab - class="active"
-    searchTab.attr("class", "active");
-    // Attribute to showTab - data-search="topics[i]"
-    searchTab.attr("data-search", topics[i]);
+    function searchTab() {
+      var codepen = $("<iframe height='300' scrolling='no' title='RZvYVZ' src='//codepen.io/marcorulesk345/embed/RZvYVZ/?height=300&theme-id=31149&default-tab=html,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/marcorulesk345/pen/RZvYVZ/'>RZvYVZ</a> by marco (<a href='https://codepen.io/marcorulesk345'>@marcorulesk345</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>");
+      // For Loop - To cull search results
+      for (var i = 0; i < topics.length; i++) {
+        // Remove current tab class="active"
+        $("#myTab").find("li").removeClass('active');
+        // Remove current content class="active in"
+        $("#myTabContent").find("div").removeClass('active in');
+        // Variable - Define <div> to place search results in
+        var contentDiv = $("<div>");
+        // Variable - Define .content to place class="" in
+        contentDiv.attr("class", "tab-pane fade active in");
+        // Variable - Define .content to place class="" in
+        contentDiv.attr("id", topics[i]);
+        contentDiv.css({'height': '350px', 'width': '100%', 'text-align': 'center'});
+        // Variable - Define <li> to generate search tab
+        var searchTab = $('<li>');
+        // Attribute to searchTab - class="active"
+        searchTab.attr("class", "active");
+        // Attribute to showTab - data-search="topics[i]"
+        searchTab.attr("data-search", topics[i]);
 
-    // Variable - Define <a> to generate input result
-    var tabAncr = $("<a data-toggle='tab'>");
-    // Attribute to showTab - href="#topics[i]"
-    tabAncr.attr("href", "#" + topics[i]);
-    // Text to showTab - displays search input on showTab. Accounts for a space in user search
-    topic = topic.split('_').join(' ');
-    tabAncr.text(topic);
-    topic = topic.split(' ').join('_');
-    // Variable - Button to delete search tab
-    var tabButton = $("<button type='button' class='close'>&times;</button>");
-    // Append with tabAncr - id="myTab"
-    searchTab.append(tabAncr);
-    // Append with tabButton - id="myTab"
-    searchTab.append(tabButton);
+        // Variable - Define <a> to generate input result
+        var tabAncr = $("<a data-toggle='tab'>");
+        // Attribute to showTab - href="#topics[i]"
+        tabAncr.attr("href", "#" + topics[i]);
+        // Text to showTab - displays search input on showTab. Accounts for a space in user search
+        topic = topic.split('_').join(' ');
+        tabAncr.text(topic);
+        topic = topic.split(' ').join('_');
+        // Variable - Button to delete search tab
+        var tabButton = $("<button type='button' class='close'>&times;</button>");
+        // Append with tabAncr - id="myTab"
+        searchTab.append(tabAncr);
+        // Append with tabButton - id="myTab"
+        searchTab.append(tabButton);
 
-    //create sidebar for each result
-    var sideBar = $('<nav>');
-    sideBar.addClass('sidebar sidebar-right');
-    sideBar.attr('id', topic + 'sidebar');
-    var meetUpHeader = $('<h3>');
-    meetUpHeader.css({'height': '60px', 'font-size': '14px', 'text-align': 'center'});
-    meetUpHeader.text('MeetUps Near You');
-    sideBar.append(meetUpHeader);
-    searchTab.append(sideBar);
+        //create sidebar for each result
+        var sideBar = $('<nav>');
+        sideBar.addClass('sidebar sidebar-right');
+        sideBar.attr('id', topic + 'sidebar');
+        var meetUpHeader = $('<h3>');
+        meetUpHeader.css({'height': '60px', 'font-size': '14px', 'text-align': 'center'});
+        meetUpHeader.text('Events');
+        sideBar.append(meetUpHeader);
+        searchTab.append(sideBar);
 
-    //create div to place youtube api call in and add codepen to content div
-    codepen.css({'height': '300px', 'width': '80%', 'text-align': 'center', 'margin': '0px 10% 0px 10%'})
-    var vids = $('<div>');
-    vids.attr('id', topic + 'video');
-    vids.css({'height': '350px', 'width': '80%', 'text-align': 'center', 'margin': '0px 10% 0px 10%'})
-    contentDiv.append(vids);
-    contentDiv.append(codepen);
-  };
-    // Append with searchTab - id="myTab"
-    $("#myTab").append(searchTab);
-    // Append with contentDiv - id="myTabContent"
-    $("#myTabContent").append(contentDiv);
-};
+        //create div to place youtube api call in and add codepen to content div
+        codepen.css({'height': '300px', 'width': '80%', 'text-align': 'center', 'margin': '0px 10% 0px 10%'})
+        var vids = $('<div>');
+        vids.attr('id', topic + 'video');
+        vids.css({'height': '350px', 'width': '80%', 'text-align': 'center', 'margin': '0px 10% 0px 10%'})
+        contentDiv.append(vids);
+        contentDiv.append(codepen);
+      };
+      // Append with searchTab - id="myTab"
+      $("#myTab").append(searchTab);
+      // Append with contentDiv - id="myTabContent"
+      $("#myTabContent").append(contentDiv);
+    };
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //---------------------------------------------------Search on click functions-------------------------------------------------------------------------------//
 //Capitalizes first letter of search input
