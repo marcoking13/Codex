@@ -86,6 +86,7 @@ window.onload = function() {
   var results;
   var eventKey = '1zFnlKT0bIUMkEAQalgnLZHvP4JnV5KpvpV0X02M';
   var backUpKey = "n3TrufCMPW589XTFhAN_rkiJZll8PHb-McY4NiW6";
+  var eventURL = "https://control.predicthq.com/search/events/";
   var queryUrl = 'https://api.predicthq.com?key=' + eventKey + '&sign=true&photo-host=public&topic=' + topic + '&zip=' + zip + '&page=5&fields=next_event,time,group_photos&callback=?';
   var tryZip = '';
   var sidebarId = '';
@@ -112,16 +113,7 @@ window.onload = function() {
       youtubeId.append("<iframe width='100%' height='100%' src='https://www.youtube.com/embed/" + videoId + "' frameborder='0'id='hi'></iframe>")
     });
 
-    $.ajax({
-      url:"https://api.predicthq.com/v1/events/?q="+topic,
-      headers: {
-         'Authorization':'Bearer '+eventKey,
 
-         'Accept':'application/json'
-     },
-      method:"GET",
-
-    }).done((res)=>{console.log(res)})
 };
 //---------------------------------------------------------------------------------------------------------------------------------------------------//
 //-----------------------------------------------------Zip Code/Search logic-----------------------------------------------------------------------//
@@ -169,44 +161,55 @@ window.onload = function() {
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //-----------------------------------------------------------MeetUp API Call-----------------------------------------------------------------------------//
-//
-//
-// //Dynamically displays meetup sidebar, reformats unix time for next event
-// let displayMeetUp = function() {
-//   for (var i =0; i < 3; i ++){
-//     var meetUpDiv=$('<div>');
-//     var p =  $('<p>');
-//     var link = $('<a>');
-//     var img = $('<img>');
-//     var time = results[i].time;
-//     var timeMoment = moment(time, 'x');
-//     var currentTime = timeMoment.format('LLL')
-//     var sidebarId = $('#' + topic + 'sidebar');
-//
-//     img.attr('src', results[i].group.photos[0].highres_link);
-//     img.css('width', '150px')
-//     img.css('height', '100px')
-//
-//     link.attr('href', results[i].event_url)
-//     link.attr('target', '_blank');
-//     link.addClass('RSVP');
-//     link.text('RSVP');
-//
-//
-// //if no venue is listed, remove venue from display
-//   if (results[i].venue === undefined) {
-//     p.html("<br>" + results[i].name + '<br>' + "Next Event: " + currentTime);
-//   }
-//   else {
-//     p.html("<br>" + results[i].name + '<br>' + results[i].venue.name + '<br>' + results[i].venue.city + ', ' + results[i].venue.state + '<br>' + "Next Event: " + currentTime);
-//   }
-//     meetUpDiv.addClass('meetUpDiv')
-//     meetUpDiv.append(p);
-//     meetUpDiv.append(img);
-//     meetUpDiv.append(link);
-//     $(meetUpDiv).appendTo(sidebarId);
-//   }
-// };
+
+
+//Dynamically displays meetup sidebar, reformats unix time for next event
+let displayMeetUp = function() {
+  for (var i =0; i < 3; i ++){
+    $.ajax({
+      url:"https://api.predicthq.com/v1/events/?q="+topic,
+      headers: {
+         'Authorization':'Bearer '+eventKey,
+
+         'Accept':'application/json'
+     },
+      method:"GET",
+
+    }).done((res)=>{
+      console.log(res);
+      var meetUpDiv=$('<div>');
+      var p =  $('<p>');
+      var link = $('<a>');
+      var img = $('<img>');
+      var time = results[i].start;
+      var timeMoment = moment(time, 'x');
+      var currentTime = timeMoment.format('LLL')
+      var sidebarId = $('#' + topic + 'sidebar');
+
+      img.attr('src', "./public/assets/img/err.png");
+      img.css('width', '150px')
+      img.css('height', '100px')
+
+      link.attr('href', results[i].event_url)
+      link.attr('target', '_blank');
+      link.addClass('RSVP');
+      link.text('RSVP');
+
+
+      //if no venue is listed, remove venue from display
+      if (results[i].venue === undefined) {
+        p.html("<br>" + results[i].name + '<br>' + "Next Event: " + currentTime);
+      }
+      else {
+        p.html("<br>" + results[i].name + '<br>' + results[i].venue.name + '<br>' + results[i].venue.city + ', ' + results[i].venue.state + '<br>' + "Next Event: " + currentTime);
+      }
+      meetUpDiv.addClass('meetUpDiv')
+      meetUpDiv.append(p);
+      meetUpDiv.append(img);
+      meetUpDiv.append(link);
+      $(meetUpDiv).appendTo(sidebarId);
+    }
+  };
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------Modal Generation for search-------------------------------------------------------------------------------//
   var topics = [];
