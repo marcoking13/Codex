@@ -105,9 +105,9 @@ let getYouTube = function(){
     });
 
     $.ajax({
-      url:"https://api.predicthq.com/v1/events/?q=java",
+      url:"https://api.predicthq.com/v1/events/?+access_token="eventKey+"&q=java",
       method:"GET",
-      Authorization:"Bearer "+eventKey
+
     }).done((res)=>{console.log(res)})
 };
 //---------------------------------------------------------------------------------------------------------------------------------------------------//
