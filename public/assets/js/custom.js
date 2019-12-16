@@ -189,7 +189,7 @@ let displayMeetUp = function() {
       var sidebarId = $('#' + topic + 'sidebar');
 
       img.attr('src', "./public/assets/img/err.png");
-      img.css('width', '150px')
+      img.css('width', '150px');
       img.css('height', '100px')
 
       link.attr('href', results[i].event_url)
@@ -210,7 +210,7 @@ let displayMeetUp = function() {
       meetUpDiv.append(img);
       meetUpDiv.append(link);
       $(meetUpDiv).appendTo(sidebarId);
-    }
+    });
   };
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------Modal Generation for search-------------------------------------------------------------------------------//
