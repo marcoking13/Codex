@@ -110,8 +110,8 @@ window.onload = function() {
     })
     .done(function(response) {
       console.log(response);
-      // var videoId = response.items[0].id.videoId;
-      // youtubeId.append("<iframe width='100%' height='100%' src='https://www.youtube.com/embed/" + videoId + "' frameborder='0'id='hi'></iframe>")
+      var videoId = response.items[0].id.videoId;
+      youtubeId.append("<iframe width='100%' height='100%' src='https://www.youtube.com/embed/" + videoId + "' frameborder='0'id='hi'></iframe>")
     });
 
 
