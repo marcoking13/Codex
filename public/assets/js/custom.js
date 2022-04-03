@@ -95,11 +95,11 @@ window.onload = function() {
 //---------------------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------YouTube variables--------------------------------------------------------------------------//
   var tubeURL = "https://www.googleapis.com/youtube/v3/";
-  var youTubeKey = "AIzaSyBOIJTAHXfZ3GKM8Sj5QCMNYBeOMsJX8_I";
+  var youTubeKey = "AIzaSyDWVGrLs5wYNVBqCvlqM2IBmkr9Xs7ZYVs";
 
   var videoSearch = '';
 //----------------------------------------------------------YouTube API-------------------------------------------------------------------------------------//
-  let getYouTube = function(){ 
+  let getYouTube = function(){
     videoSearch = tubeURL + "search?&q=" + topic + '%20tutorial' + "&part=snippet&chart=mostPopular&videoCategoryId=27&type=video&relevanceLanguage=en&maxResults=1&key=" + youTubeKey;
     var youtubeId = $('#' + topic + 'video');
 
