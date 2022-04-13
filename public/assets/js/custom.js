@@ -84,7 +84,7 @@ window.onload = function() {
   var topic = '';
   var zip = '';
   var results;
-  var eventKey = '1zFnlKT0bIUMkEAQalgnLZHvP4JnV5KpvpV0X02M';
+  var eventKey = 'np67ubjh15c8mufevve783mltb';
   var backUpKey = "n3TrufCMPW589XTFhAN_rkiJZll8PHb-McY4NiW6";
   var eventURL = "https://control.predicthq.com/search/events/";
   var queryUrl = 'https://api.predicthq.com?key=' + eventKey + '&sign=true&photo-host=public&topic=' + topic + '&zip=' + zip + '&page=5&fields=next_event,time,group_photos&callback=?';
@@ -176,7 +176,7 @@ let displayMeetUp = function() {
     method:"GET",
 
   }).done((res)=>{
-
+      console.log("Go");
       console.log(res);
       var eventURL = "https://control.predicthq.com/search/events/";
       console.log(eventURL,res);
