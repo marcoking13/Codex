@@ -100,7 +100,7 @@ window.onload = function() {
   var videoSearch = '';
 //----------------------------------------------------------YouTube API-------------------------------------------------------------------------------------//
   let getYouTube = function(){
-    videoSearch = tubeURL + "search?&q=" + topic + '%20tutorial' + "&part=snippet&chart=mostPopular&videoCategoryId=27&type=video&relevanceLanguage=en&maxResults=1&key=" + youTubeKey;
+    videoSearch = tubeURL + "search?&q=" + topic + '%20tutorial%20programming' + "&part=snippet&chart=mostPopular&videoCategoryId=27&type=video&relevanceLanguage=en&maxResults=1&key=" + youTubeKey;
     var youtubeId = $('#' + topic + 'video');
 
   $.ajax({
