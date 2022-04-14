@@ -166,7 +166,7 @@ window.onload = function() {
 
 //Dynamically displays meetup sidebar, reformats unix time for next event
 let displayMeetUp = function() {
-  google.maps.Geocoder({address:zip}).done((res)=>{
+  new google.maps.GeocoderRequest({address:zip}).done((res)=>{
     console.log(res);
   $.ajax({
     url:"https://api.predicthq.com/v1/events/?q="+topic +"&zip=' + zip + '&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
