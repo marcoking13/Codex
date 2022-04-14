@@ -168,7 +168,7 @@ window.onload = function() {
 let displayMeetUp = function() {
   google.maps.Geocoder({address:zip}).done((res)=>{
     console.log(res);
-)  $.ajax({
+  $.ajax({
     url:"https://api.predicthq.com/v1/events/?q="+topic +"&zip=' + zip + '&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
     headers: {
        'Authorization':'Bearer '+eventKey,
