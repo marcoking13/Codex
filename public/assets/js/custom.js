@@ -183,7 +183,7 @@ let displayMeetUp = function() {
       console.log(eventURL,res);
       var results = res.results;
       for (var i =0; i <2; i ++){
-
+        var i;
         var meetUpDiv=$('<div>');
         var title =  $('<h5>');
         title.addClass("bold");
