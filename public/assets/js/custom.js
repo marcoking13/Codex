@@ -167,13 +167,12 @@ window.onload = function() {
 //Dynamically displays meetup sidebar, reformats unix time for next event
 let displayMeetUp = function() {
   $.ajax({
-    url:"https://api.predicthq.com/v1/events/?q="+topic +"&zip=' + zip + '&page=5&country=US&fields=next_event,time,group_photos&callback=?",
+    url:"https://api.predicthq.com/v1/events/?q="+topic +"&zip=' + zip + '&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
     headers: {
        'Authorization':'Bearer '+eventKey,
-
        'Accept':'application/json'
    },
-    method:"GET",
+    method:"GET"
 
   }).done((res)=>{
       console.log("Go");
