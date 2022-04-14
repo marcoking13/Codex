@@ -166,7 +166,9 @@ window.onload = function() {
 
 //Dynamically displays meetup sidebar, reformats unix time for next event
 let displayMeetUp = function() {
-  $.ajax({
+  google.maps.Geocoder({address:zip}).done((res)=>{
+    console.log(res);
+)  $.ajax({
     url:"https://api.predicthq.com/v1/events/?q="+topic +"&zip=' + zip + '&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
     headers: {
        'Authorization':'Bearer '+eventKey,
@@ -229,7 +231,9 @@ let displayMeetUp = function() {
       $(meetUpDiv).appendTo(sidebarId);
       }
     }).catch(error => alert(error.message));;
+  });
   };
+
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------Modal Generation for search-------------------------------------------------------------------------------//
   var topics = [];
