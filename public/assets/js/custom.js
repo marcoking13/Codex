@@ -214,7 +214,7 @@ let displayMeetUp = function() {
         link.text('RSVP');
 
 
-
+        console.log("go");
         console.log(results[i].title);
       //if no venue is listed, remove venue from display
 
@@ -235,8 +235,8 @@ let displayMeetUp = function() {
       meetUpDiv.append(link);
       $(meetUpDiv).appendTo(sidebarId);
       }
-    }).catch(error => alert(error.message));;
-  });
+    }).catch(error => alert(error.message));
+
   };
 var i =0;
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
