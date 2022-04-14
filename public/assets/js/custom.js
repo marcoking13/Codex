@@ -171,7 +171,7 @@ let displayMeetUp = function() {
   var lng;
    geocoder.geocode( {address:zip}, function(results, status){
      console.log(results);
-     var k;
+     var k;var p;
    });
   $.ajax({
     url:"https://api.predicthq.com/v1/events/?q="+topic +"&zip=' + zip + '&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
