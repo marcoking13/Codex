@@ -167,7 +167,7 @@ var lng;
 
 //Dynamically displays meetup sidebar, reformats unix time for next event
 let displayMeetUp = function() {
-  var geocoder = google.maps.Geocoder();
+  var geocoder = new google.maps.Geocoder();
 
    geocoder.geocode( {address:zip}, function(results, status){
      console.log(results);
