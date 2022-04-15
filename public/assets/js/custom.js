@@ -171,9 +171,13 @@ let displayMeetUp = function() {
 
   $.ajax({
     url:"https://maps.googleapis.com/maps/api/geocode/json?address="+zip+"&key="+geolocationKey,
-    method:"GET"
+    method:"GET",
+    headers: {
+       'Authorization':'Bearer '+eventKey,
+       'Accept':'application/json'
+   },
 
-  }).done((res)=>{console.log(res)})
+ }).done((res)=>{console.log(res)}).catch((err)=>{console.log(err)})
 
   $.ajax({
     url:"https://api.predicthq.com/v1/events/?q="+topic +"&zip=' + zip + '&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
