@@ -418,6 +418,8 @@ function quizTab() {
 
 function insertQuestion (question){
 //Inserts questions from argued JS quiz object
+  var sidebarLeftCheck = $(".sidebar-left").hasClass("open open2");
+if(sidebarLeftCheck){
   for (var j =0; j <  10; j++) {
     console.log(question);
     nextQuestion = question[j];
@@ -436,9 +438,11 @@ function insertQuestion (question){
           $('#' + topic).append(questionDiv);
         }
       }
-    var br = $('<br>')
+    var br = $('<br>');
     questionDiv.append(br);
+
   }
+
 //Creates Submit/Reset button
   var quizSubmit = $('<button>');
   quizSubmit.addClass('quizSubmit');
@@ -479,6 +483,7 @@ $('.quiz').on('click', function(e) {
     insertQuestion(quizzes[topic+"_Quiz"]);
     $('.quiz').parent().parent().removeClass('open');
   }
+}
   //closes sidebar when you select a quiz
 });
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
