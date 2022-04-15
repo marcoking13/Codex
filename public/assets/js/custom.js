@@ -170,11 +170,7 @@ var lng;
 let displayMeetUp = function() {
 
   $.ajax({
-    url:"https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY",
-    headers: {
-       'Authorization':'Bearer '+geolocationKey,
-       'Accept':'application/json'
-   },
+    url:"https://maps.googleapis.com/maps/api/geocode/json?address="+zip+"&key="+geolocationKey,
     method:"GET"
 
   }).done((res)=>{console.log(res)})
