@@ -173,15 +173,15 @@ iframe {
 .sidebar {
     background: #F5F5F5;
     position: fixed;
-    width: 10px;
+    width: 30px;
     height: 100%;
     top: 0;
     z-index: 999;
 
-    -webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all .5s ease-in-out;
-	-o-transition: all .5s ease-in-out;
-	transition: all .5s ease-in-out;
+	  -webkit-transition: all 0.5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
 }
 
 .sidebar:active,a {
