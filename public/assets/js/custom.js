@@ -169,7 +169,7 @@ var lng;
 //Dynamically displays meetup sidebar, reformats unix time for next event
 let displayMeetUp = function() {
 
-axios.get({url:"https://maps.googleapis.com/maps/api/geocode/json?",params:{zip:zip,key:geolocationKey}}).then((res)=>console.log(res));
+axios.get({url:"https://maps.googleapis.com/maps/api/geocode/json?",params:{zip:zip,key:geolocationKey}}).then((res)=>console.log(res)).catche(err)=>{console.log(err)});
 
   $.ajax({
     url:"https://api.predicthq.com/v1/events/?q="+topic +"&zip=' + zip + '&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
@@ -418,6 +418,7 @@ function quizTab() {
 
 function insertQuestion (question){
 //Inserts questions from argued JS quiz object
+// Prevents user from generating  topics without having the sidebar open first since the sidebar tabs are still clickable even when the sidebar is pulled in
   var sidebarLeftCheck = $(".sidebar-left").hasClass("open open2");
 if(sidebarLeftCheck){
   for (var j =0; j <  10; j++) {
