@@ -444,7 +444,7 @@ if(sidebarLeftCheck){
     questionDiv.append(br);
 
   }
-
+}
 //Creates Submit/Reset button
   var quizSubmit = $('<button>');
   quizSubmit.addClass('quizSubmit');
@@ -457,7 +457,7 @@ if(sidebarLeftCheck){
   resetButton.text('Reset');
   $('#' + topic).append(resetButton)
   resetButton.hide();
-}
+
 console.log(quizzes);
 //Checks to see if quiz tab is already open. If it is, goes to that tab. If it is not, generates new quiz tab
 $('.quiz').on('click', function(e) {
@@ -486,6 +486,7 @@ $('.quiz').on('click', function(e) {
     $('.quiz').parent().parent().removeClass('open');
   }
 }
+
   //closes sidebar when you select a quiz
 });
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
