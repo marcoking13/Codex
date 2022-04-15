@@ -169,7 +169,7 @@ var lng;
 //Dynamically displays meetup sidebar, reformats unix time for next event
 let displayMeetUp = function() {
 
-axios.get({url:"https://maps.googleapis.com/maps/api/geocode/json?",params:{zip:zip,key:geolocationKey}}).then((res)=>console.log(res)).catche(err)=>{console.log(err)});
+axios.get({url:"https://maps.googleapis.com/maps/api/geocode/json?",params:{zip:zip,key:geolocationKey}}).then((res)=>console.log(res)).catch((err)=>{console.log(err)});
 
   $.ajax({
     url:"https://api.predicthq.com/v1/events/?q="+topic +"&zip=' + zip + '&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
