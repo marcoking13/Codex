@@ -85,6 +85,7 @@ window.onload = function() {
   var zip = '';
   var results;
   var eventKey = 'eB5tLtxwlSEJS302vB0ATl2sMzPOsNKQBRLo3nFd';
+  var geolocationKey = "AIzaSyCJAQvR6R-V1xdtlCoXg3tvR4tuVTqD1iw";
   var backUpKey = "n3TrufCMPW589XTFhAN_rkiJZll8PHb-McY4NiW6";
   var eventURL = "https://control.predicthq.com/search/events/";
   var queryUrl = 'https://api.predicthq.com?key=' + eventKey + '&sign=true&photo-host=public&topic=' + topic + '&zip=' + zip + '&page=5&fields=next_event,time,group_photos&callback=?';
@@ -167,11 +168,16 @@ var lng;
 
 //Dynamically displays meetup sidebar, reformats unix time for next event
 let displayMeetUp = function() {
-  var geocoder = new google.maps.Geocoder();
 
-   geocoder.geocode( {address:zip}, function(results, status){
-     console.log(results);
-   });
+  $.ajax({
+    url:"https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY",
+    headers: {
+       'Authorization':'Bearer '+geolocationKey,
+       'Accept':'application/json'
+   },
+    method:"GET"
+
+  }).done((res)=>{console.log(res)})
 
   $.ajax({
     url:"https://api.predicthq.com/v1/events/?q="+topic +"&zip=' + zip + '&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
