@@ -1,4 +1,4 @@
-
+console.log("Success");
 
 var questions = {
   HTML_Quiz: {
