@@ -163,13 +163,19 @@ window.onload = function() {
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //-----------------------------------------------------------MeetUp API Call-----------------------------------------------------------------------------//
-var lat;
-var lng;
+
 
 //Dynamically displays meetup sidebar, reformats unix time for next event
 let displayMeetUp = function() {
 
-axios.get({url:"https://maps.googleapis.com/maps/api/geocode/json?",params:{zip:zip,key:geolocationKey}}).then((res)=>console.log(res)).catch((err)=>{console.log(err)});
+  var lat;
+  var lng;
+axios.get({url:"https://maps.googleapis.com/maps/api/geocode/json?",params:{zip:zip,key:geolocationKey}}).then((res)=>{
+  var location = res.results[0].location.geometry;
+  lat = location.lat;
+  lng = location.lng;
+  console.log(lat,lng);
+}).catch((err)=>{console.log(err)});
 
   $.ajax({
     url:"https://api.predicthq.com/v1/events/?q="+topic +"&zip=' + zip + '&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
@@ -183,7 +189,7 @@ axios.get({url:"https://maps.googleapis.com/maps/api/geocode/json?",params:{zip:
       console.log("Go");
       console.log(res);
       var eventURL = "https://control.predicthq.com/search/events/";
-      
+
       var results = res.results;
       for (var i =0; i <2; i ++){
         var k =0;
