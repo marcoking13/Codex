@@ -183,7 +183,7 @@ axios.get({url:"https://maps.googleapis.com/maps/api/geocode/json?",params:{zip:
       console.log("Go");
       console.log(res);
       var eventURL = "https://control.predicthq.com/search/events/";
-      console.log(eventURL,res);
+      console.log(eventURL,res);cd dc
       var results = res.results;
       for (var i =0; i <2; i ++){
         var k =0;
@@ -485,9 +485,6 @@ $('.quiz').on('click', function(e) {
     insertQuestion(quizzes[topic+"_Quiz"]);
     $('.quiz').parent().parent().removeClass('open');
   }
-}
-
-  //closes sidebar when you select a quiz
 });
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------Quiz Logic---------------------------------------------------------------------------//
