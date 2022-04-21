@@ -170,7 +170,13 @@ let displayMeetUp = function() {
 
   var lat;
   var lng;
-axios.get({url:"https://maps.googleapis.com/maps/api/geocode/json?address="+zip+"&key="+geolocationKey}).then((res)=>{
+fetch({url:"https://maps.googleapis.com/maps/api/geocode/json?address="+zip,
+  headers: {
+     'Authorization':'Bearer '+geolocationKey,
+     'Accept':'application/json'
+ },
+  method:"GET"
+}).then((res)=>{
   var location = res.results[0].location.geometry;
   lat = location.lat;
   lng = location.lng;
