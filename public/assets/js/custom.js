@@ -170,7 +170,7 @@ let displayMeetUp = function() {
 
   var lat;
   var lng;
-$.get({url:"https://maps.googleapis.com/maps/api/geocode/json?address"+zip+"?key="+geolocationKey}).then((res)=>{
+$.get({url:"https://maps.googleapis.com/maps/api/geocode/json?address="+zip+"?key="+geolocationKey}).then((res)=>{
 
   console.log(res);
 });
