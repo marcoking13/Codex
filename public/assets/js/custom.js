@@ -170,7 +170,7 @@ let displayMeetUp = function() {
 
   var lat;
   var lng;
-$.get({url:"https://maps.googleapis.com/maps/api/geocode/json?address="+zip+"?key="+geolocationKey}).then((res)=>{
+$.get({url:"https://maps.googleapis.com/maps/api/geocode/json?address="+zip+"&key="+geolocationKey}).then((res)=>{
 
   console.log(res);
 });
@@ -423,7 +423,7 @@ function quizTab() {
 function insertQuestion (question){
 //Inserts questions from argued JS quiz object
 // Prevents user from generating  topics without having the sidebar open first since the sidebar tabs are still clickable even when the sidebar is pulled in
-  var sidebarLeftCheck = $(".sidebar-left").hasClass("open open2");
+  var sidebarLeftCheck = $(".sidebar-left").hasClass("open2");
   console.log(sidebarLeftCheck);
 
   for (var j =0; j <  10; j++) {
