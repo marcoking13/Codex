@@ -84,7 +84,7 @@ window.onload = function() {
   var topic = '';
   var zip = '';
   var results;
-  var eventKey = 'eB5tLtxwlSEJS302vB0ATl2sMzPOsNKQBRLo3nFd';
+  var eventKey = 'Uy_K5Ae8J84pL3MdPRJKrKMmQ-SmtkYWXZhIta4U';
   var geolocationKey = "AIzaSyCJAQvR6R-V1xdtlCoXg3tvR4tuVTqD1iw";
   var backUpKey = "n3TrufCMPW589XTFhAN_rkiJZll8PHb-McY4NiW6";
   var eventURL = "https://control.predicthq.com/search/events/";
@@ -242,12 +242,18 @@ $.get({url:"https://maps.googleapis.com/maps/api/geocode/json?address="+zip+"&ke
     }).catch(error => alert(error.message));
   });
   };
-var i =0;
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
-//------------------------------------------------------------Modal Generation for search-------------------------------------------------------------------------------//
-  var topics = [];
+
+
+
+
+
+  var i =0;
+  //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+  //------------------------------------------------------------Modal Generation for search-------------------------------------------------------------------------------//
+    var topics = [];
     // Function - Generates tabs of search input submitted
     function searchTab() {
+
       var codepen = $("<iframe height='300' scrolling='no' title='RZvYVZ' src='//codepen.io/marcorulesk345/embed/RZvYVZ/?height=300&theme-id=31149&default-tab=html,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/marcorulesk345/pen/RZvYVZ/'>RZvYVZ</a> by marco (<a href='https://codepen.io/marcorulesk345'>@marcorulesk345</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>");
       // For Loop - To cull search results
       for (var i = 0; i < topics.length; i++) {
