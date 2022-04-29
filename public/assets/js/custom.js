@@ -170,18 +170,10 @@ let displayMeetUp = function() {
 
   var lat;
   var lng;
-fetch({url:"https://maps.googleapis.com/maps/api/geocode/json?address="+zip,
-  headers: {
-     'Authorization':'Bearer '+geolocationKey,
-     'Accept':'application/json'
- },
-  method:"GET"
-}).then((res)=>{
-  var location = res.results[0].location.geometry;
-  lat = location.lat;
-  lng = location.lng;
-  console.log(lat,lng);
-}).catch((err)=>{console.log(err)});
+$.get({url:"https://maps.googleapis.com/maps/api/geocode/json?address"+zip+"?key="+geolocationKey}).then((res)=>{
+
+  console.log(res);
+});
 
   $.ajax({
     url:"https://api.predicthq.com/v1/events/?q="+topic +"&zip=' + zip + '&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
