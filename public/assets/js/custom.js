@@ -171,11 +171,11 @@ let displayMeetUp = function() {
   var lat;
   var lng;
 $.get({url:"https://maps.googleapis.com/maps/api/geocode/json?address="+zip+"&key="+geolocationKey}).then((res)=>{
+  console.log(res);
   var coords = res.geometry.location;
   var lat = coords.lat;
   var lng = coords.lng;
   console.log(lat,lng);
-
 
   $.ajax({
     url:"https://api.predicthq.com/v1/events/?q="+topic +"&within=10km@"+lat+","+lng+"&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
@@ -451,18 +451,18 @@ function insertQuestion (question){
 
 //Creates Submit/Reset button
   var quizSubmit = $('<button>');
-  quizSubmit.addClass('quizSubmit');
-  quizSubmit.text('Submit');
-  quizSubmit.append($('<br>'));
-  quizSubmit.attr('href', '#top');
-  $('#' + topic).append(quizSubmit);
-  var resetButton = $('<button>')
-  resetButton.addClass('resetButton');
-  resetButton.text('Reset');
-  $('#' + topic).append(resetButton)
-  resetButton.hide();
+    quizSubmit.addClass('quizSubmit');
+    quizSubmit.text('Submit');
+    quizSubmit.append($('<br>'));
+    quizSubmit.attr('href', '#top');
+    $('#' + topic).append(quizSubmit);
 
-console.log(quizzes);
+  var resetButton = $('<button>')
+    resetButton.addClass('resetButton');
+    resetButton.text('Reset');
+    $('#' + topic).append(resetButton)
+    resetButton.hide();
+
 //Checks to see if quiz tab is already open. If it is, goes to that tab. If it is not, generates new quiz tab
 $('.quiz').on('click', function(e) {
   topic = e.target.text
@@ -470,8 +470,10 @@ $('.quiz').on('click', function(e) {
   e.stopPropagation();
   var tabOpen = false;
   $('#myTab').find('li').removeClass('active');
+
   $('#myTab').find('li').each(function (){
     $(this).find('a').attr('aria-expanded', 'false');
+
     if ($(this).attr('data-search') == topic) {
       $("#myTabContent").find("div").removeClass('active in');
       $('#' + topic).addClass('tab-pane active in')
@@ -480,6 +482,7 @@ $('.quiz').on('click', function(e) {
       tabOpen = true;
       $('.quiz').parent().parent().removeClass('open');
     }
+
   });
   if (!tabOpen) {
     console.log(topic);
