@@ -423,8 +423,6 @@ function quizTab() {
 function insertQuestion (question){
 //Inserts questions from argued JS quiz object
 // Prevents user from generating  topics without having the sidebar open first since the sidebar tabs are still clickable even when the sidebar is pulled in
-  var sidebarLeftCheck = $(".sidebar-left").hasClass("open2");
-  console.log(sidebarLeftCheck);
 
   for (var j =0; j <  10; j++) {
     console.log(question);
@@ -487,7 +485,7 @@ $('.quiz').on('click', function(e) {
     quizTab();
     console.log(topic+"_Quiz")
     insertQuestion(quizzes[topic+"_Quiz"]);
-    $('.quiz').parent().parent().removeClass('open');
+  
   }
 });
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
