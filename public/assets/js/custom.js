@@ -171,12 +171,14 @@ let displayMeetUp = function() {
   var lat;
   var lng;
 $.get({url:"https://maps.googleapis.com/maps/api/geocode/json?address="+zip+"&key="+geolocationKey}).then((res)=>{
+  var coords = res.geometry.location;
+  var lat = coords.lat;
+  var lng = coords.lng;
+  console.log(lat,lng);
 
-  console.log(res);
-});
 
   $.ajax({
-    url:"https://api.predicthq.com/v1/events/?q="+topic +"&zip=' + zip + '&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
+    url:"https://api.predicthq.com/v1/events/?q="+topic +"&within=10km@"+lat+","+lng+"&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
     headers: {
        'Authorization':'Bearer '+eventKey,
        'Accept':'application/json'
@@ -238,7 +240,7 @@ $.get({url:"https://maps.googleapis.com/maps/api/geocode/json?address="+zip+"&ke
       $(meetUpDiv).appendTo(sidebarId);
       }
     }).catch(error => alert(error.message));
-
+  });
   };
 var i =0;
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -485,7 +487,7 @@ $('.quiz').on('click', function(e) {
     quizTab();
     console.log(topic+"_Quiz")
     insertQuestion(quizzes[topic+"_Quiz"]);
-  
+
   }
 });
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
