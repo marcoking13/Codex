@@ -172,7 +172,7 @@ let displayMeetUp = function() {
   var lng;
 $.get({url:"https://maps.googleapis.com/maps/api/geocode/json?address="+zip+"&key="+geolocationKey}).then((res)=>{
   console.log(res);
-  var coords = res.geometry.location;
+  var coords = res.results[0].geometry.location;
   var lat = coords.lat;
   var lng = coords.lng;
   console.log(lat,lng);
