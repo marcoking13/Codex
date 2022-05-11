@@ -10,11 +10,11 @@
 //-------------------------------------------------------------------Quiz objects-------------------------------------------------------------------------------------//
 
 
-
-$(".left").on("click",function(){
-  $(".lefta").toggleClass("ghost");
-  $(".left3").toggleClass("ghost");
-});
+//
+// $(".left").on("click",function(){
+//   $(".lefta").toggleClass("ghost");
+//   $(".left3").toggleClass("ghost");
+// });
 // Nav Transition
 $('body').on('click', function () {
   if ($('.nav-tabs').children().length == 0) {
@@ -178,7 +178,7 @@ $.get({url:"https://maps.googleapis.com/maps/api/geocode/json?address="+zip+"&ke
   console.log(lat,lng);
 
   $.ajax({
-    url:"https://api.predicthq.com/v1/events/?q="+topic +"&within=10km@"+lat+","+lng+"&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
+    url:"https://api.predicthq.com/v1/events/?q="+topic +"&within=100km@"+lat+","+lng+"&catagory=programming&page=5&country=US&fields=next_event,time,group_photos&callback=?",
     headers: {
        'Authorization':'Bearer '+eventKey,
        'Accept':'application/json'
